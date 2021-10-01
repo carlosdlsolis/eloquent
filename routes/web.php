@@ -13,10 +13,13 @@
 use App\Post;
 
 Route::get('eloquent', function () {
-    $posts = Post::where('id', '>=','20')
-    ->orderby('id','desc')->take(3)->get();
+  $posts = Post::where('id', '>=', '20')
+  ->orderBy('id', 'desc')
+  ->take(3)
+  ->get();
 
-    foreach ($posts as $post){
-        echo "$post->id $post->title <br>";
+  foreach($posts as $post)
+    {
+    echo "$post->id $post->title <br>";
     }
 });
