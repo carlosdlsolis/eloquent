@@ -17,14 +17,13 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('title');
-            $table->foreign('user_id')->reference('id')->on('users');
-            
+            $table->foreign('user_id')->references('id')->on('users');
             // Audits fields
             $table->timestamps();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('modified_by');
             $table->softDeletes();
-  
+       
             // Foreign keys
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('modified_by')->references('id')->on('users');
