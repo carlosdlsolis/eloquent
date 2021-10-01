@@ -28,11 +28,12 @@ Route::get('posts', function () {
 
   $posts = Post::get();
 
-  foreach ($posts as $post) {
+  foreach ($posts as $post) 
+  {
     echo "
-  $post->id
-  <strong>{$post->user->name}</strong>
-  $post->title <br>";
+    $post->id
+    <strong>{$post->user->name}</strong>
+    $post->title <br>";
   }
 });
 
