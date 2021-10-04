@@ -13,7 +13,8 @@
 
 use App\Post;
 
-Route::get('eloquent', function () {
+Route::get('eloquent', function () 
+{
     $posts = Post::where('id', '>=', '20')
         ->orderBy('id', 'desc')
         ->take(3)
@@ -24,8 +25,8 @@ Route::get('eloquent', function () {
     }
 });
 
-Route::get('posts', function () {
-
+Route::get('posts', function () 
+{
     $posts = Post::get();
 
     foreach ($posts as $post) {
@@ -38,7 +39,8 @@ Route::get('posts', function () {
 
 use App\User;
 
-Route::get('users', function () {
+Route::get('users', function () 
+{
 
     $users = User::all();
 
@@ -50,8 +52,8 @@ Route::get('users', function () {
     }
 });
 
-Route::get('collections', function () {
-
+Route::get('collections', function () 
+{
     $users = User::all();
 
     // dd($users->contains(4));
@@ -61,7 +63,8 @@ Route::get('collections', function () {
     dd($users->load('post'));
 });
 
-Route::get('serialization', function () {
+Route::get('serialization', function () 
+{
 
     $users = User::all();
 
