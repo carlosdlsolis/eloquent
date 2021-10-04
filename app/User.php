@@ -36,13 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> bc38b4a7d30c84acc44b9ab002ea797c62fa0dad
     public function post()
     {
         return $this->hasMany(Post::class);  
+    }
+
+    public function getGetNameAttribute()
+    {
+        return strtoupper($this->name); 
+    }
+
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtolower( $value ); 
     }
 }
