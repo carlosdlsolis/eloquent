@@ -11,6 +11,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'user_id' => rand(1,4),
         'created_by' => rand(1,4),
         'modified_by' => rand(1,4),
+
         'title' => $faker->sentence
       ];
 });
