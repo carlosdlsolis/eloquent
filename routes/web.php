@@ -20,7 +20,8 @@ Route::get('eloquent', function ()
         ->take(3)
         ->get();
 
-    foreach ($posts as $post) {
+    foreach ($posts as $post)
+    {
         echo "$post->id $post->title <br>";
     }
 });
@@ -29,7 +30,8 @@ Route::get('posts', function ()
 {
     $posts = Post::get();
 
-    foreach ($posts as $post) {
+    foreach ($posts as $post) 
+    {
         echo "
         $post->id
         <strong>{$post->user->get_name}</strong>
@@ -44,7 +46,8 @@ Route::get('users', function ()
 
     $users = User::all();
 
-    foreach ($users as $user) {
+    foreach ($users as $user) 
+    {
         echo "
         $user->id
         <strong>{$user->get_name}</strong>
