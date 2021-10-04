@@ -6,8 +6,12 @@ use App\Post;
 use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {
-    return [
-        'user_id' => rand(1, 4),
+    return 
+      [
+        'user_id' => rand(1,4),
+        'created_by' => rand(1,4),
+        'modified_by' => rand(1,4),
+
         'title' => $faker->sentence
-    ];
+      ];
 });

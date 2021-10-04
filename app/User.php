@@ -36,7 +36,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+  
     public function post()
     {
         return $this->hasMany(Post::class);  
@@ -51,4 +51,5 @@ class User extends Authenticatable
     {
         return $this->attributes['name'] = strtolower ($value);
     }
+
 }
